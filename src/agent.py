@@ -388,22 +388,21 @@ class TradingAgent:
 
     # --- Configuration ---
 
-    # Model options per provider (latest as of 2025-2026)
+    # Model options per provider (latest as of May 2026)
     MODELS: dict[str, list[str]] = {
         "claude": [
-            "claude-sonnet-4-6",        # Best balance — default
-            "claude-opus-4-6",          # Most intelligent
+            "claude-opus-4-7",           # Most capable — default
+            "claude-sonnet-4-6",         # Best speed / intelligence balance
             "claude-haiku-4-5-20251001", # Fastest / cheapest
         ],
         "openai": [
-            "gpt-4o",                   # Latest flagship — default
-            "gpt-4o-mini",              # Faster / cheaper
-            "o3",                       # Advanced reasoning
-            "o4-mini",                  # Fast reasoning
+            "gpt-5.5",                   # Flagship — default
+            "gpt-5.4",                   # Affordable, strong coding
+            "gpt-5.4-mini",              # Fastest / cheapest
         ],
         "gemini": [
-            "gemini-3.1-pro-preview",      # Most capable — default
-            "gemini-3-flash-preview",      # Faster / lower cost
+            "gemini-3.1-pro-preview",        # Most capable — default
+            "gemini-3-flash-preview",        # Faster / lower cost
             "gemini-3.1-flash-lite-preview", # Fastest / cheapest
         ],
     }
