@@ -1,8 +1,23 @@
-![AI Trading Agent screenshot](./Screenshot.png)
+![Charles Schwab AI Trading Agent — web interface showing real-time quotes, options chain, and AI chat](./Screenshot.png)
 
-# Schwab API — AI Agent
+# Charles Schwab API — AI Trading Agent (Python)
 
-A Python application that connects an **AI agent** to the Charles Schwab brokerage API via [schwabdev](https://github.com/tylerebowers/Schwabdev), served through a **NiceGUI** web interface. The agent supports natural-language queries about market data, account information, and trade execution using a ReAct tool-call loop across multiple LLM providers.
+> **Natural-language stock trading and market analysis powered by AI** — connect to your Charles Schwab brokerage account and query real-time quotes, options chains, account positions, and order history using plain English.
+
+A Python application that connects an **AI agent** to the **Charles Schwab brokerage API** via [schwabdev](https://github.com/tylerebowers/Schwabdev), served through a **NiceGUI** web interface. The agent supports natural-language queries about market data, account information, and trade execution using a **ReAct tool-call loop** across multiple LLM providers (Google Gemini, OpenAI GPT, and Anthropic Claude).
+
+## Features
+
+- **Natural-language interface** — ask questions like *"What are my open positions?"* or *"Show me the SPY option chain expiring this Friday"*
+- **Real-time market data** — live quotes, price history, top movers, market hours, and instrument search via the Schwab API
+- **Options chain analysis** — filter by type, strike range, expiration date, or days-to-expiration (DTE)
+- **Account management** — balances, positions, order history, and transaction details across all linked accounts
+- **AI-assisted trade execution** — place and cancel limit orders for equities (disabled by default, opt-in)
+- **Interactive stock charts** — candlestick + volume charts rendered directly in the browser
+- **Multi-provider LLM support** — choose between Google Gemini, OpenAI GPT, and Anthropic Claude from the sidebar
+- **Quick-action skills** — one-click prompt shortcuts for common tasks (quote, chart, positions, orders, buy)
+
+---
 
 ## Disclaimer
 
@@ -12,11 +27,13 @@ The authors and contributors make **no warranty** regarding accuracy, availabili
 
 ---
 
-## AI Agent
+---
 
-The agent (`src/agent.py`) runs a **ReAct loop**: it sends your message to the LLM, receives tool calls, executes them against the Schwab API, feeds the results back, and repeats until a final answer is produced.
+## AI Agent — ReAct Loop Architecture
 
-### Supported LLM providers
+The agent (`src/agent.py`) runs a **ReAct (Reason + Act) loop**: it sends your message to the LLM, receives tool calls, executes them against the Schwab API, feeds the results back, and repeats until a final answer is produced.
+
+### Supported LLM Providers
 
 Configure **one** API key in `.env` and select the provider in the sidebar:
 
@@ -26,11 +43,11 @@ Configure **one** API key in `.env` and select the provider in the sidebar:
 | OpenAI | `OPENAI_API_KEY` | Models: `gpt-5.5`, `gpt-5.4`, `gpt-5.4-mini` |
 | Anthropic Claude | `ANTHROPIC_API_KEY` | Models: `claude-opus-4-7`, `claude-sonnet-4-6`, `claude-haiku-4-5-20251001` |
 
-### Agent tools
+### Agent Tools — Schwab API Integrations
 
 Tools are grouped into three categories. Each can be **enabled or disabled individually** in the sidebar before or during a conversation.
 
-#### Market Data
+#### Market Data (Real-Time & Historical)
 | Tool | Description |
 |---|---|
 | `get_quote` | Real-time quote for a single symbol |
