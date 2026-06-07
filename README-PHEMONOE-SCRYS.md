@@ -6,6 +6,6 @@
  - Added Osiris.AI link and others
  - 
 
-Standing on the shoulders of giants.
+ ### Standing on the shoulders of giants.
  - https://github.com/roninio/Schwab-API-AI-AGENT
  - https://github.com/tylerebowers/Schwabdev
