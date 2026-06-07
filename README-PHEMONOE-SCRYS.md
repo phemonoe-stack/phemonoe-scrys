@@ -1,0 +1,11 @@
+ # PHEMONOE SCRYS - SCHWAB AI AGENT
+ - Fixed issue with missing callback schwab requires port :8182.
+ - Fixed token database issue.
+ - Added Fidelity Positions and Historical Chart
+ - Added Fidelity Closed Positions
+ - Added Osiris.AI link and others
+ - 
+
+Standing on the shoulders of giants.
+ - https://github.com/roninio/Schwab-API-AI-AGENT
+ - https://github.com/tylerebowers/Schwabdev
